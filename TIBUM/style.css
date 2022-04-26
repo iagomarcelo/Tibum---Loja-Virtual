@@ -1,0 +1,274 @@
+*{
+    color: #202022;
+}
+
+.box{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 1em;
+    background-color: #F2F3F4;
+}
+
+.header{
+    background-image: linear-gradient(160deg, #006cc5 50%, #0076d7 20%);
+    width: 100%;
+    height: 7em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .header_title > h1 a img{
+    width: 130px;
+}
+
+.header .header_title > h1 a:hover{
+    color: #00213c;
+}
+
+.header .header_nav_box{
+    display: flex;  
+}
+
+.header .header_nav_box > nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .header_nav_box .header_nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;  
+    margin-bottom: 0 !important;
+}
+
+.header .header_nav_box .header_nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.header .header_nav_box .header_nav ul li{
+    padding: 10px;
+    font-size: 1.6em;
+}
+
+.header .header_nav_box .header_nav ul li > a:hover{
+    color: #00213c;
+}
+
+
+/* conteudo principal */
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.content .content_search{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.content .content_search > input{
+    width: 30%;
+    padding: 10px;
+    border-color: #006cc5;
+    border-radius: 7px;
+}
+
+
+.content .content_search #button{
+    border-color: #006cc5;
+    color: #0076d7;
+}
+
+.content .content_search #button:hover{
+    background-color: #00213c;
+    border-color: #FFF;
+    color: #FFF;
+}
+
+.content .content_main{
+    display: flex;
+    padding: 40px;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 0 40px;
+}
+
+
+
+.content .content_main .content_main_produto{
+    padding: 0 20px;
+    width: 50%;
+}
+
+.content .content_main .content_main_produto article h1{
+    font-size: 3em;
+    color: #006ac1;
+}
+
+.content .content_main .content_main_produto .content_main_produto_img{
+    display: flex;
+}
+
+.content .content_main .content_main_produto .content_main_produto_img > img{
+    width: 80%;
+    border-radius: 5px;
+}
+
+.content .content_main .content_main_preco{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.content .content_main .content_main_preco .a_pagar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    background-color: #006cc5;
+    border-radius: 3px;
+    padding: 10px 5px;
+    width: 50%;
+}
+
+.content .content_main .content_main_preco .a_pagar > h1{
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.content .content_main .content_main_preco .a_pagar > span{
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.content .content_main .content_main_preco .limpar > button{
+    border-color: #006cc5 !important;
+    color: #0076d7;
+    border-radius: 3px;
+}
+
+.content .content_main .content_main_preco .limpar button:hover{
+    background-color: #00213c;
+    border-color: #FFF;
+    color: #FFF;
+}
+
+.content .content_main .content_main_preco .produto{
+    display: flex;
+}
+
+.content .content_main .content_main_preco .produto button{
+    width: 100px;
+    height: 50px;
+    border-color: #006cc5;
+    color: #0076d7;
+    border-radius: 7px !important;
+}
+
+.content .content_main .content_main_preco .produto button:hover{
+    background-color: #00213c;
+    border-color: #FFF;
+    color: #FFF;
+    border-radius: 7px !important;
+}
+
+.content .content_main .content_main_preco .produto .produto_valorqtd label{
+    font-size: 1.4em;
+}
+
+.content .content_main .content_main_preco .produto .produto_valorqtd input{
+    border-color: #006ac1;
+    border-radius: 3px;
+}
+
+.content .content_main .content_main_preco .produto .produto_valorqtd h1{
+    font-size: 3em;
+    color: #0076d7;
+}
+.content .content_main .content_main_preco .produto .produto_valorqtd .produto_valorqtd_calc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-top: 10px;
+    gap: 5px 0;
+}
+
+.content .content_main .content_main_preco .produto .produto_valorqtd .produto_valorqtd_calc > button{
+    border-radius: 3px !important;
+}
+
+.content .content_main .content_main_preco .produto .produto_valorqtd div > p > a{
+    text-decoration: none;
+    font-size: 0.9em;
+    display: flex;
+    color: #0076d7;
+}
+
+.content .content_nav{
+    margin: 50px 40px !important;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.content .content_nav ul li a{
+    color: #0076d7;
+}
+
+.descricao{
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.descricao .descricao_article > h1{
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0076d7;
+}
+
+.descricao .descricao_article > h2{
+    font-size: 1em;
+    color: #0076d7;
+}
+
+.descricao .descricao_article > p{
+    font-size: 1em;
+}
+
+
+.footer{
+    display: flex;
+    background-image: linear-gradient(160deg, #006cc5 50%, #0076d7 20%);
+    height: 80px;
+    
+}
+
+.bold{
+    font-weight: 700;
+    font-size: 1.2em;
+    width: 89%;
+}
+
+
+
+
+/* videos */
+
+.videos{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+

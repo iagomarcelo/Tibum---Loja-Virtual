@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIBUM - RTX 3080</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bootstrap.css" />
+  </head>
+
+  <body class="box">
+    <header class="header">
+      <div class="header_title">
+        <h1>
+          <a href="index.html"
+            ><img src="images/logo.png" alt="Logo Tibum!"
+          /></a>
+        </h1>
+      </div>
+
+      <div class="header_nav_box">
+        <nav class="header_nav">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">PROMOÇÕES</a></li>
+            <li><a href="#">CONTATO</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="content_search">
+        <label for="search"></label>
+        <input type="search" id="search" class="search" />
+        <button type="button" class="btn btn-outline-primary" id="button">
+          SEARCH
+        </button>
+      </div>
+
+      <div class="content_main">
+        <section class="content_main_produto">
+          <article>
+            <h1>ZOTAC - RTX 3080</h1>
+
+            <div class="content_main_produto_img">
+              <img src="images/placa.jpg" alt="RTX 3080" />
+            </div>
+          </article>
+        </section>
+
+        <section class="content_main_preco">
+          <section class="produto">
+            <div class="produto_valorqtd">
+              <h1>R$ 9.999,00</h1>
+              <label for="qtd1">Quantidade:</label>
+              <input type="number" value="1" min="1" max="99" id="qtd1" />
+
+              <div class="produto_valorqtd_calc">
+                <button
+                  type="button"
+                  id="adicionar1"
+                  id="produto1"
+                  onclick="AddCarrinho('RTX 3080 = ', document.getElementById('qtd1').value,'9.999', 1)"
+                >
+                  Comprar
+                </button>
+                <p>
+                  <a href="index.html">Calcular Total</a>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <script>
+            function AddCarrinho(produto, qtd, valor, posicao) {
+              localStorage.setItem("produto" + posicao, produto);
+              localStorage.setItem("qtd" + posicao, qtd);
+              valor = valor * qtd;
+              localStorage.setItem("valor" + posicao, valor);
+              alert("Produto adicionado ao carrinho!");
+            }
+          </script>
+
+          <div id="itens"></div>
+          <div class="a_pagar">
+            <h1>Valor a pagar:</h1>
+            <span id="total"></span>
+          </div>
+          <script>
+            var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
+            var i = 0; // variável que irá percorrer as posições
+            var valor = 0; // variável que vai receber o preço do produto convertido em Float.
+
+            for (
+              i = 1;
+              i <= 99;
+              i++ // verifica até 99 produtos registrados na localStorage
+            ) {
+              var prod = localStorage.getItem("produto" + i + ""); // verifica se há recheio nesta posição.
+              if (prod != null) {
+                // exibe os dados da lista dentro da div itens
+                document.getElementById("itens").innerHTML +=
+                  localStorage.getItem("qtd" + i) + " x ";
+                document.getElementById("itens").innerHTML +=
+                  localStorage.getItem("produto" + i);
+                document.getElementById("itens").innerHTML += " ";
+                document.getElementById("itens").innerHTML +=
+                  "R$: " + localStorage.getItem("valor" + i) + "<hr>";
+
+                // calcula o total
+                valor = parseFloat(localStorage.getItem("valor" + i)); // valor convertido com o parseFloat()
+                total = total + valor; // arredonda as casas decimais com o .toFixed()
+              }
+            }
+            // exibe o total
+            document.getElementById("total").innerHTML = total.toFixed(3);
+          </script>
+
+          <div class="limpar">
+            <button
+              type="button"
+              onclick=" localStorage.clear(); location.reload();"
+            >
+              Limpar carrinho
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <div class="content_nav">
+        <nav>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="home-tab"
+                data-toggle="tab"
+                href="index.html"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+                >Descrição do produto</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="profile-tab"
+                data-toggle="tab"
+                href="videos.html"
+                role="tab"
+                aria-controls="profile"
+                aria-selected="false"
+                >Vídeos</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            ></div>
+            <div
+              class="tab-pane fade show active"
+              id="profile"
+              role="tabpanel"
+              aria-labelledby="profile-tab"
+            >
+              <div class="videos">
+                <iframe
+                  width="360"
+                  height="200"
+                  src="https://www.youtube.com/embed/I98C_zTxUv8"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+
+                <iframe
+                  width="360"
+                  height="200"
+                  src="https://www.youtube.com/embed/7puH-8aCfBY"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+
+                <iframe
+                  width="360"
+                  height="200"
+                  src="https://www.youtube.com/embed/tqCMEViHoVY"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="footer"></footer>
+  </body>
+</html>
